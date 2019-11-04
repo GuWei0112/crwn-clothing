@@ -1,40 +1,45 @@
 import React, { useState } from "react";
 import MenuItem from "../menu-item/menu-item.component";
-import './directory.style.scss'
+import "./directory.style.scss";
 export default props => {
   const [sections, setSection] = useState([
     {
       title: "hats",
       imageUrl: "https://i.ibb.co/cvontL1/hat.png",
-      id: 1
+      id: 1,
+      linkUrl: ""
     },
     {
       title: "jackets",
       imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
-      id: 2
+      id: 2,
+      linkUrl: ""
     },
     {
       title: "sneakers",
       imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
-      id: 3
+      id: 3,
+      linkUrl: ""
     },
     {
       title: "mens",
       imageUrl: "https://i.ibb.co/R70vBrQ/hat.png",
-      size:'larger',
-      id: 4
+      size: "larger",
+      id: 4,
+      linkUrl: ""
     },
     {
       title: "womens",
       imageUrl: "https://i.ibb.co/GCCdy8t/hat.png",
-      size:'larger',
-      id: 5
+      size: "larger",
+      id: 5,
+      linkUrl: ""
     }
   ]);
   return (
     <div className="directory-menu">
-      {sections.map(({ id, title, imageUrl,size }) => (
-        <MenuItem key={id} title={title} imageUrl ={imageUrl} size={size}/>
+      {sections.map(({ id, ...otherSectionProps }) => (
+        <MenuItem key={id} {...otherSectionProps} />
       ))}
     </div>
   );
