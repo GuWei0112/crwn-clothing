@@ -5,7 +5,7 @@ export default props => {
   const [sections, setSection] = useState([
     {
       title: "hats",
-      imageUrl: "https://i.ibb.co/cvontL1/hat.png",
+      imageUrl: "https://i.ibb.co/cvontL1/hats.png",
       id: 1,
       linkUrl: ""
     },
@@ -23,14 +23,14 @@ export default props => {
     },
     {
       title: "mens",
-      imageUrl: "https://i.ibb.co/R70vBrQ/hat.png",
+      imageUrl: "https://i.ibb.co/R70vBrQ/mens.png",
       size: "larger",
       id: 4,
       linkUrl: ""
     },
     {
       title: "womens",
-      imageUrl: "https://i.ibb.co/GCCdy8t/hat.png",
+      imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
       size: "larger",
       id: 5,
       linkUrl: ""
