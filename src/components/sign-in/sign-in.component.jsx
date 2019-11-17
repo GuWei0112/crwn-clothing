@@ -47,14 +47,15 @@ export default () => {
           }}
           required
         />
+        <div className="button">
+          <CustomButton type="submit" value="Submit Form">
+            Sign in
+          </CustomButton>
 
-        <CustomButton type="submit" value="Submit Form">
-          Sign in
-        </CustomButton>
-
-        <CustomButton onClick={signInWithGoogle}>
-          Sign in with Google
-        </CustomButton>
+          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+            Sign in with Google
+          </CustomButton>
+        </div>
       </form>
     </div>
   );
