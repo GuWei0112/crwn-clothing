@@ -36,11 +36,13 @@ function App() {
           }
         })
       }
+ 
     })
-
-    return () => { unsubscribeFromAuth() } /*ComponentWillUnMount */
-  }, [])
-
+    return () => {
+      unsubscribeFromAuth();
+    } /*ComponentWillUnMount */
+  }, [unsubscribeFromAuth])
+  
   return (
     <div >
       <Header currentUser={state.currentUser} />

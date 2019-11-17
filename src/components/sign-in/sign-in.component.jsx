@@ -3,16 +3,22 @@ import React, { useState } from "react";
 import "./sign-in.style.scss";
 import FormInput from "../form-input/forn-input.component";
 import CustomButton from "../custom-button/custom-button.component";
-
-import { signInWithGoogle } from "../../firebase/firebase.utils";
+import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 export default () => {
   const [state, setState] = useState({
     email: "",
     password: ""
   });
 
-  const handleSubmit = () => {
-    setState({ email: "", password: "" });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { email, password } = state;
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      setState({ email: "", password: "" });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleChange = e => {
@@ -26,7 +32,7 @@ export default () => {
     <div className="sign-in">
       <h2>I already have an account</h2>
       <span>Sign in with your email and password</span>
-      <form onSubmit={() => handleSubmit()}>
+      <form onSubmit={e => handleSubmit(e)}>
         <FormInput
           type="email"
           name="email"
