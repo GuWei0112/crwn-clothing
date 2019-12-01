@@ -20,7 +20,11 @@ export default connect(
         <span className="name">{name}</span>
         <span className="price">{price}</span>
       </div>
-      <CustomButton inverted onClick={() => addItem(item)}>
+      <CustomButton
+        inverted
+        onClick={() => addItem(item)}
+        className="custom-button"
+      >
         Add to Cart
       </CustomButton>
     </div>
