@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect'
-import { SSL_OP_ALL } from 'constants'
 
 const selectShop = state => state.shop
 
@@ -22,4 +21,9 @@ export const selectCollection = collectionUrlParam =>
 export const selectIsCollectionFetching = createSelector(
     [selectShop],
     shop => shop.isFetching
+)
+
+export const selectIsCollectionsLoaded = createSelector(
+    [selectShop],
+    shop => !!shop.collections
 )
