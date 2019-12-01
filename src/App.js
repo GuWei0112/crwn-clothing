@@ -12,6 +12,7 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { setCurrentUser } from './redux/user/user.action'
 import { selectCurrentUser } from './redux/user/user.selector'
+
 const App = ({ setCurrentUser, currentUser }) => {
 
   let unsubscribeFromAuth = null
