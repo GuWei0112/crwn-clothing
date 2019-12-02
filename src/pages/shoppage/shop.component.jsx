@@ -2,21 +2,21 @@ import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { fetchCollecitonStartAsync } from "../../redux/shop/shop.action";
+import { fetchCollectionStart } from "../../redux/shop/shop.action";
 
 import CollectionOverViewContainer from "../../components/collections-overview/collections-overview.container";
 import collectionContainer from "../../pages/collection/collection.container";
 
 const mapDispatchToProps = dispatch => ({
-  fetchCollecitonStartAsync: () => dispatch(fetchCollecitonStartAsync())
+  fetchCollectionStart: () => dispatch(fetchCollectionStart())
 });
 
 export default connect(
   null,
   mapDispatchToProps
-)(({ match, fetchCollecitonStartAsync }) => {
+)(({ match, fetchCollectionStart }) => {
   useEffect(() => {
-    fetchCollecitonStartAsync();
+    fetchCollectionStart();
   }, []);
 
   return (
