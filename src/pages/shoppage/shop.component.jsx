@@ -17,7 +17,7 @@ export default connect(
 )(({ match, fetchCollecitonStartAsync }) => {
   useEffect(() => {
     fetchCollecitonStartAsync();
-  }, []);
+  }, [fetchCollecitonStartAsync]);
 
   return (
     <div className="shop-page">

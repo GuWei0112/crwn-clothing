@@ -14,11 +14,8 @@ import { setCurrentUser } from './redux/user/user.action'
 import { selectCurrentUser } from './redux/user/user.selector'
 const App = ({ setCurrentUser, currentUser }) => {
 
-  let unsubscribeFromAuth = null
-
   useEffect(() => {
-
-    unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+    const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {/* EXISTS */
         const userRef = await createUserProfileDocument(userAuth) /* document ref */
 
@@ -36,7 +33,7 @@ const App = ({ setCurrentUser, currentUser }) => {
     return () => {
       unsubscribeFromAuth();
     } /*ComponentWillUnMount */
-  }, [unsubscribeFromAuth])
+  }, [])
 
   return (
     <div >
