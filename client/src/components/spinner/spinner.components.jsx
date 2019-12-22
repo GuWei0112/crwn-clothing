@@ -1,5 +1,5 @@
 import React from "react";
-import { SpinnerContainer, SpinnerOverlay } from "./spinner.styles";
+import { SpinnerContainer, SpinnerOverlay } from "./spinner.style";
 
 export default () => (
   <SpinnerOverlay>
