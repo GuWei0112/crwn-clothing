@@ -49,7 +49,7 @@ const App = ({ setCurrentUser, currentUser }) => {
       <Header />
       <Switch>
         <ErrorBoundary>
-          <Suspense callback={<Spinner />}>
+          <Suspense fallback={<Spinner />}>
             <Route exact path='/' component={HomePage} exact />
             <Route path='/shop' component={ShopPage} />
             <Route exact path='/checkout' component={CheckoutPage} />
